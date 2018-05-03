@@ -76,7 +76,7 @@ public class SchPermission {
     }
 
     private SchPermissionFragment getSchPermissionsFragment(Activity activity) {
-        SchPermissionFragment schPermissionFragment = findRxPermissionsFragment(activity);
+        SchPermissionFragment schPermissionFragment = findSchPermissionsFragment(activity);
         boolean isNewInstance = schPermissionFragment == null;
         if (isNewInstance) {
             schPermissionFragment = new SchPermissionFragment();
@@ -90,7 +90,7 @@ public class SchPermission {
         return schPermissionFragment;
     }
 
-    private SchPermissionFragment findRxPermissionsFragment(Activity activity) {
+    private SchPermissionFragment findSchPermissionsFragment(Activity activity) {
         return (SchPermissionFragment) activity.getFragmentManager().findFragmentByTag(TAG);
     }
 
