@@ -19,35 +19,28 @@ Android6.0之后，Android系统就要求敏感权限需要动态申请。这位
 ```
   SchPermission mSchPermission = new SchPermission(this);
   mSchPermission
-                        .request(new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                                new
-                                        IPermissionCallback() {
-                                            @Override
-                                            public void onPermissionResult(@NonNull String[] permissions,
-                                                                           @NonNull int[] grantResults,
-                                                                           boolean[]
-                                                                                   shouldShowRequestPermissionRationale) {
-                                                StringBuffer sb = new StringBuffer();
-                                                for (String str : permissions) {
-                                                    sb.append(" ");
-                                                    sb.append(str);
-                                                }
-                                                StringBuffer sb2 = new StringBuffer();
-                                                for (int i : grantResults) {
-                                                    sb2.append(" ");
-                                                    sb2.append(i);
-                                                }
-                                                StringBuffer sb3 = new StringBuffer();
-                                                for (boolean b : shouldShowRequestPermissionRationale) {
-                                                    sb3.append(" ");
-                                                    sb3.append(b);
-                                                }
-                                                Log.i(TAG, "permissions=" + sb.toString() + ",grantResults=" + sb2
-                                                        .toString() + ",shouldShowRequestPermissionRationale=" + sb3
-                                                        .toString());
+                          .request(new String[] {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                                  new
+                                          IPermissionCallback() {
+                                              @Override
+                                              public void onPermissionResult(int requestCode,
+                                                                             @NonNull String[] permissions,
+                                                                             @NonNull int[] grantResults) {
+                                                  StringBuffer sb = new StringBuffer();
+                                                  for (String str : permissions) {
+                                                      sb.append(" ");
+                                                      sb.append(str);
+                                                  }
+                                                  StringBuffer sb2 = new StringBuffer();
+                                                  for (int i : grantResults) {
+                                                      sb2.append(" ");
+                                                      sb2.append(i);
+                                                  }
+                                                  Log.i(TAG, "permissions=" + sb.toString() + ",grantResults=" + sb2
+                                                          .toString() + ",shouldShowRequestPermissionRationale=");
 
-                                            }
-                                        });
+                                              }
+                                          });
     
 ```
 
