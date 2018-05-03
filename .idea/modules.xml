@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://D:\BaiDu\SchPermission\PermissionLib\PermissionLib.iml" filepath="D:\BaiDu\SchPermission\PermissionLib\PermissionLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/SchPermission.iml" filepath="$PROJECT_DIR$/SchPermission.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/permission/permission.iml" filepath="$PROJECT_DIR$/permission/permission.iml" />

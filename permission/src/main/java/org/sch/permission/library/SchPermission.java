@@ -14,7 +14,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 /**
- * Created by v_shenchanghui on 2018/4/27.
+ * Created by shenchanghui on 2018/4/27.
  */
 
 public class SchPermission {
@@ -66,11 +66,11 @@ public class SchPermission {
 
     }
 
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults,
-                                           boolean[] shouldShowRequestPermissionRationale) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
         IPermissionCallback callback = mCallbackMap.get(requestCode);
         if (callback != null) {
-            callback.onPermissionResult(permissions, grantResults, shouldShowRequestPermissionRationale);
+            callback.onPermissionResult(requestCode, permissions, grantResults);
             mCallbackMap.remove(requestCode);
         }
     }

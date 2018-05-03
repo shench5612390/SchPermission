@@ -5,9 +5,15 @@ import java.io.Serializable;
 import android.support.annotation.NonNull;
 
 /**
- * Created by v_shenchanghui on 2018/4/27.
+ * Created by shenchanghui on 2018/4/27.
  */
 
 public interface IPermissionCallback extends Serializable {
-    void onPermissionResult(@NonNull String[] permissions, @NonNull int[] grantResults,boolean[] shouldShowRequestPermissionRationale);
+    /**
+     * 权限申请回调
+     *
+     * @param permissions  申请的权限
+     * @param grantResults 权限申请结果
+     */
+    void onPermissionResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults);
 }

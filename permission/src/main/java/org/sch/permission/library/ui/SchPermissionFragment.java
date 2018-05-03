@@ -13,7 +13,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 
 /**
- * Created by v_shenchanghui on 2018/4/27.
+ * Created by shenchanghui on 2018/4/27.
  */
 
 public class SchPermissionFragment extends Fragment {
@@ -70,20 +70,8 @@ public class SchPermissionFragment extends Fragment {
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        boolean[] shouldShowRequestPermissionRationale = new boolean[permissions.length];
-
-        for (int i = 0; i < permissions.length; i++) {
-            shouldShowRequestPermissionRationale[i] = shouldShowRequestPermissionRationale(permissions[i]);
-        }
-
-        onRequestPermissionsResult(requestCode, permissions, grantResults, shouldShowRequestPermissionRationale);
-    }
-
-    void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults,
-                                    boolean[] shouldShowRequestPermissionRationale) {
         if (mSchPermission != null) {
-            mSchPermission.onRequestPermissionsResult(requestCode, permissions, grantResults,
-                    shouldShowRequestPermissionRationale);
+            mSchPermission.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 
