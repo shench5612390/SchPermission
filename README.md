@@ -15,6 +15,25 @@ Android6.0之后，Android系统就要求敏感权限需要动态申请。这位
 - 然后，创建一个Fragment类：SchPermissionFragment。具体的申请权限申请及申请结果回调都在该fragment中。 
 - 为了防止同时多次调用申请权限接口，导致回调错乱，每次申请权限的requestCode都不一样，创建一个HashMap存储requestCode和callback，一一对应，防止回调错乱。
 
+### 如何集成该开源库
+项目的build.gradle：
+```
+buildscript {
+    
+    repositories {
+        ...
+        jcenter()
+    }
+ }
+```
+module的build.gradle：
+```
+dependencies {
+    ...
+    compile 'org.sch.permission.library:permission:1.0.1'
+}
+```
+
 ### 使用例子
 ```
   SchPermission mSchPermission = new SchPermission(this);
